@@ -1,0 +1,34 @@
+{
+  "name": "Wishlist",
+  "type": "object",
+  "properties": {
+    "cliente_id": {
+      "type": "string",
+      "description": "ID do cliente"
+    },
+    "produto_id": {
+      "type": "string",
+      "description": "ID do produto"
+    },
+    "produto_nome": {
+      "type": "string",
+      "description": "Nome do produto"
+    },
+    "produto_preco": {
+      "type": "number",
+      "description": "Pre\u00e7o do produto"
+    },
+    "produto_imagem": {
+      "type": "string",
+      "description": "URL da imagem do produto"
+    },
+    "produto_sabor": {
+      "type": "string",
+      "description": "Sabor do produto"
+    }
+  },
+  "required": [
+    "cliente_id",
+    "produto_id"
+  ]
+}

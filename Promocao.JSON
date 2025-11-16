@@ -1,0 +1,55 @@
+{
+  "name": "Promocao",
+  "type": "object",
+  "properties": {
+    "nome": {
+      "type": "string",
+      "description": "Nome da promo\u00e7\u00e3o"
+    },
+    "descricao": {
+      "type": "string",
+      "description": "Descri\u00e7\u00e3o da promo\u00e7\u00e3o"
+    },
+    "tipo_desconto": {
+      "type": "string",
+      "enum": [
+        "percentual",
+        "valor_fixo"
+      ],
+      "description": "Tipo de desconto"
+    },
+    "valor_desconto": {
+      "type": "number",
+      "description": "Valor do desconto (% ou R$)"
+    },
+    "produtos": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "IDs dos produtos em promo\u00e7\u00e3o"
+    },
+    "data_inicio": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de in\u00edcio"
+    },
+    "data_fim": {
+      "type": "string",
+      "format": "date",
+      "description": "Data de t\u00e9rmino"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se a promo\u00e7\u00e3o est\u00e1 ativa"
+    }
+  },
+  "required": [
+    "nome",
+    "tipo_desconto",
+    "valor_desconto",
+    "data_inicio",
+    "data_fim"
+  ]
+}

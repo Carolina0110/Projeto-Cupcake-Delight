@@ -1,0 +1,138 @@
+{
+  "name": "Pedido",
+  "type": "object",
+  "properties": {
+    "cliente_id": {
+      "type": "string",
+      "description": "ID do cliente que fez o pedido"
+    },
+    "cliente_nome": {
+      "type": "string",
+      "description": "Nome do cliente"
+    },
+    "cliente_email": {
+      "type": "string",
+      "description": "Email do cliente"
+    },
+    "itens": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "produto_id": {
+            "type": "string"
+          },
+          "produto_nome": {
+            "type": "string"
+          },
+          "produto_imagem": {
+            "type": "string"
+          },
+          "quantidade": {
+            "type": "number"
+          },
+          "preco_unitario": {
+            "type": "number"
+          },
+          "subtotal": {
+            "type": "number"
+          }
+        }
+      },
+      "description": "Itens do pedido"
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Subtotal dos produtos"
+    },
+    "taxa_entrega": {
+      "type": "number",
+      "default": 0,
+      "description": "Valor da taxa de entrega"
+    },
+    "total": {
+      "type": "number",
+      "description": "Valor total do pedido"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "confirmado",
+        "preparando",
+        "em_entrega",
+        "entregue",
+        "cancelado"
+      ],
+      "default": "pendente",
+      "description": "Status atual do pedido"
+    },
+    "tipo_entrega": {
+      "type": "string",
+      "enum": [
+        "expressa",
+        "agendada"
+      ],
+      "description": "Tipo de entrega escolhido"
+    },
+    "endereco": {
+      "type": "object",
+      "properties": {
+        "rua": {
+          "type": "string"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "complemento": {
+          "type": "string"
+        },
+        "bairro": {
+          "type": "string"
+        },
+        "cidade": {
+          "type": "string"
+        },
+        "estado": {
+          "type": "string"
+        },
+        "cep": {
+          "type": "string"
+        }
+      },
+      "description": "Endere\u00e7o de entrega"
+    },
+    "data_entrega": {
+      "type": "string",
+      "format": "date",
+      "description": "Data programada para entrega"
+    },
+    "forma_pagamento": {
+      "type": "string",
+      "enum": [
+        "cartao",
+        "pix"
+      ],
+      "description": "Forma de pagamento"
+    },
+    "pagamento_status": {
+      "type": "string",
+      "enum": [
+        "pendente",
+        "processando",
+        "aprovado",
+        "recusado"
+      ],
+      "default": "pendente"
+    },
+    "observacoes": {
+      "type": "string",
+      "description": "Observa\u00e7\u00f5es do cliente"
+    }
+  },
+  "required": [
+    "cliente_id",
+    "itens",
+    "total"
+  ]
+}
